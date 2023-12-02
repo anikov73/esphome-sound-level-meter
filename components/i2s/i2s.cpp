@@ -127,7 +127,7 @@ void I2SComponent::setup() {
 
   ESP_LOGCONFIG(TAG, "Setting up I2S %u ...", this->port_num_);
 
-  i2s_config_t i2s_config = {.mode = i2s_mode_t(I2S_MODE_MASTER | I2S_MODE_RX),  // TODO: make it configurable
+  i2s_config_t i2s_config = {.mode = i2s_mode_t(I2S_MODE_MASTER | I2S_MODE_RX | I2S_MODE_PDM),  // TODO: make it configurable
                              .sample_rate = this->sample_rate_,
                              .bits_per_sample = i2s_bits_per_sample_t(this->bits_per_sample_),
                              .channel_format = I2S_CHANNEL_FMT_ONLY_RIGHT,  // TODO: make it configurable
